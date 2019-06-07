@@ -1,0 +1,6 @@
+name: Snowfight
+version: ${project.version}
+main: sociological.snowfight.Snowfight
+api-version: 1.13
+prefix: Snowfight
+authors: [Sociological]
