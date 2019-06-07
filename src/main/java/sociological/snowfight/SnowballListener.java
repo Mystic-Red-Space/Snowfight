@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 public class SnowballListener implements Listener {
     @EventHandler
     public void onSnowballThrowed(ProjectileLaunchEvent event) {
-        if(event.getEntity() instanceof Snowball) {
+        if(event.getEntity() instanceof Snowball && event.getEntity().getShooter() instanceof Player) {
             Player shooter = (Player)event.getEntity().getShooter();
             if(shooter.getInventory().contains(Material.SNOW_BLOCK)) {
                 shooter.getInventory().removeItem(new ItemStack(Material.SNOW_BLOCK,1));
