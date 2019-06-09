@@ -18,7 +18,7 @@ public class SnowballListener implements Listener {
             if(shooter.getInventory().contains(Material.SNOW_BLOCK)) {
                 shooter.getInventory().removeItem(new ItemStack(Material.SNOW_BLOCK,1));
             } else {
-                shooter.setCooldown(Material.SNOWBALL,60);
+                shooter.setCooldown(Material.SNOWBALL,50);
             }
         }
     }
