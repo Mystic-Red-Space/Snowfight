@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class DamageListener implements Listener {
     @EventHandler
     public void onDamaged(EntityDamageByEntityEvent event) {
-        if(event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE && event.getDamager() instanceof Snowball) {
+        if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE && event.getDamager() instanceof Snowball) {
             event.setDamage(2);
         }
     }

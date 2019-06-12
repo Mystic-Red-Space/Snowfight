@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Snowfight-1.14.2:jar">
+    <output-path>$USER_HOME$/Workspace/Spigot plugin tester/plugins</output-path>
+    <root id="archive" name="Snowfight.jar">
+      <element id="module-output" name="Snowfight-1.14.2" />
+    </root>
+  </artifact>
+</component>
