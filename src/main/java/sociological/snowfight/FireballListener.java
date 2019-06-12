@@ -12,7 +12,7 @@ public class FireballListener implements Listener {
     public void onFireballClicked(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         if (event.getItem() != null && event.getItem().getType() == Material.FIRE_CHARGE) {
-            Fireball fireball = player.getWorld().spawn(player.getLocation(), Fireball.class);
+            Fireball fireball = player.getWorld().spawn(player.getEyeLocation(), Fireball.class);
             fireball.setShooter(player);
         }
     }
