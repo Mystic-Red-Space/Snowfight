@@ -14,6 +14,6 @@ public final class Snowfight extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logicd
+        // Plugin shutdown logic
     }
 }
