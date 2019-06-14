@@ -1,5 +1,6 @@
 package sociological.snowfight;
 
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Snowfight extends JavaPlugin {
@@ -7,8 +8,10 @@ public final class Snowfight extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new SnowballListener(), this);
-        getServer().getPluginManager().registerEvents(new DamageListener(), this);
+        PluginManager pluginManager = getServer().getPluginManager();
+        pluginManager.registerEvents(new SnowballListener(), this);
+        pluginManager.registerEvents(new DamageListener(), this);
+        pluginManager.registerEvents(new FireballListener(), this);
 
     }
 
