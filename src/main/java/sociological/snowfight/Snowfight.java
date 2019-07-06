@@ -13,6 +13,7 @@ public final class Snowfight extends JavaPlugin {
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new FireballListener(), this);
 
+
     }
 
     @Override
