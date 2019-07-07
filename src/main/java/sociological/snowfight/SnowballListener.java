@@ -1,5 +1,6 @@
 package sociological.snowfight;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
@@ -14,8 +15,12 @@ public class SnowballListener implements Listener {
     public void onSnowballThrowed(ProjectileLaunchEvent event) {
         if (event.getEntity() instanceof Snowball && event.getEntity().getShooter() instanceof Player) {
             Player shooter = (Player) event.getEntity().getShooter();
-            String name = Objects.requireNonNull(shooter.getInventory().getItemInMainHand().getItemMeta()).getDisplayName();
-            event.getEntity().setCustomName(name);
+            if(shooter.getInventory().getItemInMainHand().getItemMeta().hasDisplayName()) {
+                String name = shooter.getInventory().getItemInMainHand().getItemMeta().getDisplayName();
+                event.getEntity().setCustomName(name);
+            } else {
+                event.getEntity().setCustomName("눈덩이");
+            }
         }
     }
 }

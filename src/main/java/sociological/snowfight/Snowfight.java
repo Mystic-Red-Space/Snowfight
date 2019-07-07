@@ -12,7 +12,7 @@ public final class Snowfight extends JavaPlugin {
         pluginManager.registerEvents(new SnowballListener(), this);
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new UseItemListener(), this);
-
+        pluginManager.registerEvents(new ProjectileHitListener(), this);
 
     }
 

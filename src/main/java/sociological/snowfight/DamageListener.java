@@ -9,14 +9,12 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class DamageListener implements Listener {
     @EventHandler
     public void onDamaged(EntityDamageByEntityEvent event) {
-        if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE && event.getDamager() instanceof Snowball) {
-            event.setDamage(2);
-            String name = event.getDamager().getCustomName();
-            if (name != null) {
-                if (name.equals("번개치는 눈덩이")) {
-                    event.getEntity().getWorld().strikeLightning(event.getEntity().getLocation());
-                } else if (name.equals("강제점프 눈덩이")) {
-                    event.getEntity().teleport(event.getEntity().getLocation().add(0, 4, 0));
+        if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
+            if (event.getDamager() instanceof Snowball) {
+                if (event.getDamager() instanceof Snowball && event.getEntity().getCustomName().equals("눈덩이")) {
+                    event.setDamage(2);
+                } else if (event.getDamager() instanceof Snowball && !event.getEntity().getCustomName().equals("눈덩이")) {
+                    event.setCancelled(true);
                 }
             }
         }
