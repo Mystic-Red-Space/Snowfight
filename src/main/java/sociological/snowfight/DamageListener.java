@@ -11,9 +11,9 @@ public class DamageListener implements Listener {
     public void onDamaged(EntityDamageByEntityEvent event) {
         if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
             if (event.getDamager() instanceof Snowball) {
-                if (event.getDamager() instanceof Snowball && event.getEntity().getCustomName().equals("눈덩이")) {
+                if (event.getEntity().getCustomName().equals("눈덩이")) {
                     event.setDamage(2);
-                } else if (event.getDamager() instanceof Snowball && !event.getEntity().getCustomName().equals("눈덩이")) {
+                } else {
                     event.setCancelled(true);
                 }
             }
