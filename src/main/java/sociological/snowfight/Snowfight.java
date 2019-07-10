@@ -9,7 +9,7 @@ public final class Snowfight extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         PluginManager pluginManager = getServer().getPluginManager();
-        pluginManager.registerEvents(new SnowballListener(), this);
+        pluginManager.registerEvents(new ProjectileListener(), this);
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new UseItemListener(), this);
         pluginManager.registerEvents(new ProjectileHitListener(), this);
