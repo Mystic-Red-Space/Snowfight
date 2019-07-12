@@ -10,12 +10,14 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.Objects;
+
 public class DamageListener implements Listener {
     @EventHandler
     public void onDamaged(EntityDamageByEntityEvent event) {
         if (event.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
             if (event.getDamager() instanceof Snowball) {
-                if (event.getEntity().getCustomName().equals("눈덩이")) {
+                if (Objects.requireNonNull(event.getEntity().getCustomName()).equals("눈덩이")) {
                     event.setDamage(2);
                 } else {
                     event.setCancelled(true);
