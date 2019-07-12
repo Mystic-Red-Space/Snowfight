@@ -8,7 +8,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 
 public class ProjectileHitListener implements Listener {
     @EventHandler
-    public void OnProjectileHited(ProjectileHitEvent event) {
+    public void OnProjectileHit(ProjectileHitEvent event) {
         if (event.getEntity() instanceof Snowball && event.getEntity().getCustomName().equals("전도성 눈덩이")) {
             Location loc = event.getEntity().getLocation();
             event.getEntity().getWorld().strikeLightning(loc);
