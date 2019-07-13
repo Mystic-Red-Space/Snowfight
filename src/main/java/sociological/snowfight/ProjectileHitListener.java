@@ -10,7 +10,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import java.util.Random;
 
 public class ProjectileHitListener implements Listener {
-    Random rand = new Random();
+    private Random rand = new Random();
 
     @EventHandler
     public void OnProjectileHited(ProjectileHitEvent event) {
