@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class UseItemListener implements Listener {
     @EventHandler
@@ -16,6 +17,7 @@ public class UseItemListener implements Listener {
             if (event.getItem() != null && event.getItem().getType() == Material.FIRE_CHARGE) {
                 SmallFireball fireball = player.getWorld().spawn(player.getLocation(), SmallFireball.class);
                 fireball.setShooter(player);
+                player.getInventory().removeItem(new ItemStack(Material.FIRE_CHARGE, 1));
             }
         }
     }
