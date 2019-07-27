@@ -22,10 +22,11 @@ public class ProjectileHitListener implements Listener {
                 Location loc = entity.getLocation();
                 entity.getWorld().strikeLightning(loc);
             } else if (entity.getCustomName().equals("강제점프 눈덩이") && event.getHitEntity() != null) {
-                event.getHitEntity().setVelocity(new Vector(0, 4, 0));
+                event.getHitEntity().setVelocity(new Vector(0, 1, 0));
                 /*event.getHitEntity().teleport(entity.getLocation().add(0, 4, 0));*/
             } else if (entity.getCustomName().equals("랜덤이동 눈덩이") && event.getHitEntity() != null) {
-                event.getHitEntity().teleport(entity.getLocation().add(rand.nextInt(11) - 5, 0, rand.nextInt(11) - 5));
+                event.getHitEntity().setVelocity(new Vector((rand.nextInt(11) - 5) / 4, (rand.nextInt(11) - 5) / 4, (rand.nextInt(11) - 5) / 4));
+                /*event.getHitEntity().teleport(entity.getLocation().add(rand.nextInt(11) - 5, 0, rand.nextInt(11) - 5));*/
             } else if (entity.getCustomName().equals("위치교환 눈덩이"))
                 if (event.getHitEntity() != null && entity.getShooter() != null) {
                     Location shooterloc = ((Entity) entity.getShooter()).getLocation();
