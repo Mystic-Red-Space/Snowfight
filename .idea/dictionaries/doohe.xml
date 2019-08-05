@@ -2,6 +2,12 @@
   <dictionary name="doohe">
     <words>
       <w>grammer</w>
+      <w>hitterloc</w>
+      <w>hotpack</w>
+      <w>hotpackmeta</w>
+      <w>removemeta</w>
+      <w>shooterloc</w>
+      <w>teleport</w>
     </words>
   </dictionary>
 </component>
