@@ -17,7 +17,7 @@ public class UseItemListener implements Listener {
     @EventHandler
     public void onItemUsed(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (event.getHand() == EquipmentSlot.HAND && event.getAction() == Action.RIGHT_CLICK_AIR) {
             if (event.getItem() != null) {
                 if (event.getItem().getType() == Material.FIRE_CHARGE) {
                     SmallFireball fireball = player.getWorld().spawn(player.getLocation(), SmallFireball.class);
