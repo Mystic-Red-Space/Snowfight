@@ -25,7 +25,8 @@ public class ProjectileHitListener implements Listener {
                 event.getHitEntity().setVelocity(new Vector(0, 1, 0));
                 /*event.getHitEntity().teleport(entity.getLocation().add(0, 4, 0));*/
             } else if (entity.getCustomName().equals("랜덤이동 눈덩이") && event.getHitEntity() != null) {
-                event.getHitEntity().setVelocity(new Vector((rand.nextInt(11) - 5) / 2, (rand.nextInt(11) - 5) / 2, (rand.nextInt(11) - 5) / 2));
+                Entity HitEntity = event.getHitEntity();
+                event.getHitEntity().teleport(new Location(HitEntity.getWorld(), HitEntity.getLocation().getX() + (rand.nextInt(11) - 5), HitEntity.getLocation().getY(), HitEntity.getLocation().getZ() + (rand.nextInt(11) - 5), HitEntity.getLocation().getYaw(), HitEntity.getLocation().getPitch()));
                 /*event.getHitEntity().teleport(entity.getLocation().add(rand.nextInt(11) - 5, 0, rand.nextInt(11) - 5));*/
             } else if (entity.getCustomName().equals("위치교환 눈덩이"))
                 if (event.getHitEntity() != null && entity.getShooter() != null) {
